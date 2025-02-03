@@ -4,6 +4,7 @@ https://llmagents-learning.org/sp25
 
 ## Lecture 1: Inference-Time Techniques for LLM Reasoning
 
+<details>
 The lecture emphasized strategies for optimizing reasoning tasks using advanced prompting methods, multi-candidate exploration, and iterative self-improvement, all aimed at improving accuracy and adaptability during inference.
 
 Here are the main takeaways:
@@ -17,10 +18,10 @@ Here are the main takeaways:
 - Balancing inference budgets and model size is crucial for optimizing multi-sample solutions and computational efficiency.
 - General-purpose and scalable methods remain essential for designing effective reasoning strategies in LLMs.
 
-https://www.youtube.com/live/g0Dwtf3BH-0
-
-https://llmagents-learning.org/slides/inference_time_techniques_lecture_sp25.pdf
-
+Ref:
+- https://www.youtube.com/live/g0Dwtf3BH-0
+- https://llmagents-learning.org/slides/inference_time_techniques_lecture_sp25.pdf
+</details>
 
 
 
