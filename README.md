@@ -39,4 +39,4 @@ logging & caching - langsmith, helicone
 
 
 [1]: https://github.com/suvasishm/my_courses/tree/main/rag
-[2]: 
+[2]: /notes/Advanced%20LLM%20Agents
