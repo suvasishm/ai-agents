@@ -19,12 +19,12 @@ Resources that I found useful:
 
   - Bee AI (Open Source) - https://github.com/i-am-bee
 
-- AI Agent using RAG and LangChain (in progress):
+- [AI Agent using RAG and LangChain](1) (in progress):
   - https://www.coursera.org/learn/fundamentals-of-ai-agents-using-rag-and-langchain/
 
 - Advanced LLM Agents: https://rdi.berkeley.edu/adv-llm-agents/
   - Fall 2024 (todo): https://llmagents-learning.org/f24
-  - Spring 2025 (in progress): https://llmagents-learning.org/sp25
+  - [Spring 2025](2) (in progress): https://llmagents-learning.org/sp25
 
 
 
@@ -36,3 +36,7 @@ logging & caching - langsmith, helicone
 
 
 - RAG - https://arxiv.org/pdf/2312.10997
+
+
+[1]: https://github.com/suvasishm/my_courses/tree/main/rag
+[2]: 
