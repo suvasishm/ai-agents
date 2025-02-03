@@ -38,5 +38,5 @@ logging & caching - langsmith, helicone
 - RAG - https://arxiv.org/pdf/2312.10997
 
 
-[1]: https://github.com/suvasishm/my_courses/tree/main/rag
+[1]: https://github.com/suvasishm/my_courses/tree/main/coursera_rag_langchain
 [2]: /notes/adv-llm-agents-mooc-spring-25
