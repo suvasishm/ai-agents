@@ -23,8 +23,8 @@ Resources that I found useful:
   - https://www.coursera.org/learn/fundamentals-of-ai-agents-using-rag-and-langchain/
 
 - Advanced LLM Agents: https://rdi.berkeley.edu/adv-llm-agents/
-  - Fall 2024 (todo): https://llmagents-learning.org/f24
   - [Spring 2025][2] (in progress): https://llmagents-learning.org/sp25
+  - Fall 2024 (todo): https://llmagents-learning.org/f24
 
 
 
