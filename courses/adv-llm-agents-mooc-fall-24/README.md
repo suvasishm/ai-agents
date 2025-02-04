@@ -1,4 +1,4 @@
-# Advanced LLM Agents, MOOC, Spring 2025
+# Advanced LLM Agents, MOOC, Fall 2024
 
 https://llmagents-learning.org/f24
 
