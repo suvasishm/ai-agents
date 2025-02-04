@@ -136,12 +136,12 @@ They range from basic CoT prompting to advanced methods like tree-of-thought and
 
 This document outlines the research and development of self-improving and reasoning Large Language Models (LLMs), which aim to create AI that trains itself, evaluates its performance, and updates itself based on its understanding. The ultimate goal is to achieve superhuman performance through these methods.
 
-## System 1 vs System 2
+### System 1 vs System 2
 The document introduces two systems for how LLMs function, System 1 and System 2:
 *   **System 1**: This is reactive, relies on associations, has fixed compute per token, directly outputs answers, and is prone to failures like hallucinations and spurious correlations. Standard LLMs are considered System 1.
 *   **System 2**: This is more deliberate and effortful, involving multiple "calls" to the System 1 LLM. It uses planning, search, verification, and reasoning with dynamic computation. Techniques like Chain-of-Thought (CoT) and Tree-of-Thoughts (ToT) fall under System 2.
 
-## Historical Context and Evolution of LLMs
+### Historical Context and Evolution of LLMs
 The document provides a brief history of LLMs and related technologies:
 *   **Early 2000s:** Support Vector Machines were prevalent.
 *   **2014:** The LLM attention mechanism was developed.
@@ -151,13 +151,13 @@ The document provides a brief history of LLMs and related technologies:
 *   **2022:** InstructGPT was developed using SFT and RLHF on GPT3.
 *   **2023:** Models like Claude and GPT-4 began using extensive RLHF for safety and accuracy, and Direct Preference Optimization (DPO) was introduced.
 
-## Improving Reasoning with System 2
+### Improving Reasoning with System 2
 *   **Prompting Approaches:** Early attempts to improve reasoning focused on prompting techniques.
 *   **Chain-of-Verification (CoVe):** This method aims to reduce hallucinations by adding verification steps to the generation process. It includes variants like joint left-to-right generation, factored attention, and a factored-revise approach.
 *   **System 2 Attention (S2A):** This method focuses on making attention more explicit and effortful by prompting the LLM to rewrite inputs, removing irrelevant or biased content, to improve the relevance of answers.
 *   **Branch-Solve-Merge:** This approach breaks down complex tasks into subproblems, solves them individually, and merges the solutions to improve complex tasks where instructions are hard.
 
-## Self-Improvement and Self-Rewarding LLMs
+### Self-Improvement and Self-Rewarding LLMs
 *   **Self-Training:** LLMs improve by assigning rewards to their own outputs and optimizing accordingly.
 *   **Self-Rewarding LMs:** These models are trained to have both instruction-following and evaluation capabilities. They can generate responses to instructions and judge the quality of those responses, creating an iterative process of improvement.
 *   **Iterative Training:** This involves two steps: self-instruction creation (generating prompts, responses, and self-rewards) and instruction training (using DPO on selected preference pairs).
@@ -166,18 +166,18 @@ The document provides a brief history of LLMs and related technologies:
 *    **Evaluation:** The self-rewarding models are evaluated on their ability to follow instructions and their ability to act as a reward model. The models are tested using internal instruction following test sets, AlpacaEval 2.0, and MT-Bench. They are also evaluated using the OpenAssistant validation set.
 *    **Improvements:** The models show continuous improvement through iterative training.
 
-## Iterative Reasoning and Meta-Rewarding
+### Iterative Reasoning and Meta-Rewarding
 *   **Iterative Reasoning Preference Optimisation:** This technique uses self-rewarding techniques for reasoning tasks by generating multiple Chain-of-Thoughts (CoTs) and selecting preferences based on answer correctness.
 *    **Thinking LLMs:**  This approach trains LLMs to think and respond for all instruction following tasks, not just math, using Thought Preference Optimization (TPO). It has achieved strong results on benchmarks like AlpacaEval and ArenaHard.
 *   **Meta-Rewarding LLMs:** These models improve their judgments by meta-judging them. The LLM acts as an actor, judge, and meta-judge. Meta-rewards provide an additional training signal.
 *   **LLM-as-a-Meta-Judge:** This is used to assess judgments. The method involves generating multiple judgments for pairs of responses and calculating pairwise meta-judgments.
 *   **EvalPlanner:** This method trains LLMs to generate planning and reasoning CoTs for evaluation, converting evaluation tasks into verifiable tasks by generating similar prompts with high and low quality responses.
 
-## Future Directions
+### Future Directions
 *   **Latent System 2 Thoughts:** Explores the use of latent thoughts rather than tokens, with research into self-evaluation and learning from interaction.
 *   **Improved System 1:** Research is needed to improve the fundamental architecture of System 1, such as better attention mechanisms and world models.
 
-## Conclusion
+### Conclusion
 The document highlights the significant progress in developing self-improving and reasoning LLMs. By using techniques like self-rewarding, iterative training, and meta-reasoning, LLMs are approaching and potentially surpassing human-level performance. Further research is needed to address limitations, improve reasoning, and explore the potential of more advanced approaches.
 </details>
 
