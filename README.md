@@ -39,4 +39,4 @@ logging & caching - langsmith, helicone
 
 
 [1]: https://github.com/suvasishm/my_courses/tree/main/coursera_rag_langchain
-[2]: /notes/adv-llm-agents-mooc-spring-25
+[2]: /courses/adv-llm-agents-mooc-spring-25
