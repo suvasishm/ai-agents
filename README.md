@@ -24,7 +24,7 @@ Resources that I found useful:
 
 - Advanced LLM Agents: https://rdi.berkeley.edu/adv-llm-agents/
   - [Spring 2025][2] (in progress): https://llmagents-learning.org/sp25
-  - Fall 2024 (todo): https://llmagents-learning.org/f24
+  - [Fall 2024][3] (todo): https://llmagents-learning.org/f24
 
 
 
@@ -40,3 +40,4 @@ logging & caching - langsmith, helicone
 
 [1]: https://github.com/suvasishm/my_courses/tree/main/coursera_rag_langchain
 [2]: /courses/adv-llm-agents-mooc-spring-25
+[3]: /courses/adv-llm-agents-mooc-fall-24
