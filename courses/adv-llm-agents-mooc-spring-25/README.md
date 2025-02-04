@@ -28,6 +28,12 @@ Ref:
 
 ## Briefing:
 
+## Overview:
+
+Ref:
+- https://www.youtube.com/live/_MNlLhU33H0
+- https://llmagents-learning.org/slides/Jason-Weston-Reasoning-Alignment-Berkeley-Talk.pdf
+
 ### Introduction
 
 This document summarises a lecture on inference-time techniques for enhancing the reasoning capabilities of Large Language Models (LLMs). The lecture highlights the significant advancements in LLM reasoning, particularly with models like OpenAI's "o1" and "o3", which demonstrate impressive performance on complex tasks like math, coding, and STEM. However, these high levels of performance are often achieved by using substantial inference-time computation. The lecture explores various strategies to optimise this, categorising them into three main areas: using more tokens for a single solution, searching and selecting from multiple candidates, and iterative self-improvement.
