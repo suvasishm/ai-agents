@@ -1,4 +1,4 @@
-# AI Agents
+# AI Agents with LLMs
 
 Documenting resources as I am going through the learning process
 
