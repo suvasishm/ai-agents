@@ -148,12 +148,6 @@ The document highlights the **progression from rule-based AI to modern LLM agent
 
 <details>
 
-Here is your formatted briefing document:  
-
----
-
-# **Briefing Document: LLM Agents – History, Concepts, and Future Directions**  
-
 ## **1. Introduction**  
 This document provides a structured overview of the evolution and current state of **Large Language Model (LLM) agents**, drawing insights from *L2_llm_agent_history.pdf* by **Shunyu Yao**. It covers key concepts, historical evolution, reasoning mechanisms, and future research challenges. The presentation underscores the importance of **abstraction, generality, and learning from past methodologies**, while also addressing practical applications and existing limitations.  
 
