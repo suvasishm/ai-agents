@@ -97,5 +97,50 @@ Ref:
 
 </details>
 
+## Lecture 2: LLM Agent History
+
+<details>
+
+#### **Overview of LLM Agents**
+The document provides a historical and technical overview of **Large Language Model (LLM) agents**, their evolution, and their role in reasoning and acting within environments.
+
+#### **Key Concepts**
+1. **Definition of Agents** – Intelligent systems that interact with an environment, including physical (robots, autonomous cars) and digital environments (chatbots, DQN for games, etc.).
+2. **LLM Agents** – These agents use **LLMs to process text-based observations and take actions**. They evolve through:
+   - **Text Agents** (e.g., ELIZA)
+   - **LLM-based Agents** (e.g., SayCan, Language Planner)
+   - **Reasoning Agents** (e.g., ReAct, AutoGPT)
+
+#### **Historical Evolution**
+1. **Early AI Agents**
+   - **ELIZA (1966)** – Simple rule-based text agent.
+   - **LSTM-DQN (2015)** – Used reinforcement learning for text-based environments.
+2. **LLMs and Reasoning**
+   - **Few-shot learning** (NeurIPS 2020) showed LLMs could generalize with minimal examples.
+   - **Chain-of-Thought (CoT)** and **Tree-of-Thought (ToT)** approaches improved stepwise reasoning.
+3. **Modern LLM Agents**
+   - **ReAct (Reasoning + Acting)** – Introduces structured reasoning combined with external actions (e.g., using tools, APIs).
+   - **Retrieval-Augmented Generation (RAG)** – Enhances factual accuracy by retrieving external knowledge.
+
+#### **Capabilities and Use Cases**
+1. **Question Answering (QA)**
+   - Requires different methods for **knowledge-based** (RAG), **computational** (PoT), and **reasoning-intensive** (CoT) queries.
+2. **Tool Use**
+   - LLMs interact with tools (calculators, APIs, search engines) to extend functionality.
+3. **Long-Term Memory**
+   - Concepts like **Reflexion**, **Voyager**, and **Generative Agents** enable LLMs to remember and refine knowledge over multiple interactions.
+
+#### **Future Challenges & Research Areas**
+1. **Enhancing Memory & Learning** – Moving beyond short-term context windows to **persistent knowledge retention**.
+2. **Scaling Multi-Agent Systems** – Exploring **collaborative AI agents** that can interact efficiently.
+3. **Improving Robustness & Accuracy** – Avoiding hallucinations and ensuring reliable decision-making.
+
+#### **Conclusion**
+The document highlights the **progression from rule-based AI to modern LLM agents**, emphasizing the synergy between reasoning and acting (ReAct), the importance of **retrieval-enhanced learning**, and the need for **long-term memory** in AI systems. Future advancements will focus on improving **generalization, robustness, and adaptability**.
+
+Would you like a more detailed breakdown of a specific section?
+
+</details>
+
 
 
