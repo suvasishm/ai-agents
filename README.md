@@ -19,7 +19,7 @@ Resources that I found useful:
 
   - Bee AI (Open Source) - https://github.com/i-am-bee
 
-- [AI Agent using RAG and LangChain][1] (in progress):
+- [AI Agent using RAG and LangChain][1]:
   - https://www.coursera.org/learn/fundamentals-of-ai-agents-using-rag-and-langchain/
 
 - Advanced LLM Agents: https://rdi.berkeley.edu/adv-llm-agents/
