@@ -28,12 +28,6 @@ Ref:
 
 ## Briefing:
 
-## Overview:
-
-Ref:
-- https://www.youtube.com/live/_MNlLhU33H0
-- https://llmagents-learning.org/slides/Jason-Weston-Reasoning-Alignment-Berkeley-Talk.pdf
-
 ### Introduction
 
 This document summarises a lecture on inference-time techniques for enhancing the reasoning capabilities of Large Language Models (LLMs). The lecture highlights the significant advancements in LLM reasoning, particularly with models like OpenAI's "o1" and "o3", which demonstrate impressive performance on complex tasks like math, coding, and STEM. However, these high levels of performance are often achieved by using substantial inference-time computation. The lecture explores various strategies to optimise this, categorising them into three main areas: using more tokens for a single solution, searching and selecting from multiple candidates, and iterative self-improvement.
@@ -185,6 +179,99 @@ The document provides a brief history of LLMs and related technologies:
 
 ### Conclusion
 The document highlights the significant progress in developing self-improving and reasoning LLMs. By using techniques like self-rewarding, iterative training, and meta-reasoning, LLMs are approaching and potentially surpassing human-level performance. Further research is needed to address limitations, improve reasoning, and explore the potential of more advanced approaches.
+
+### Ref:
+- https://www.youtube.com/live/_MNlLhU33H0
+- https://llmagents-learning.org/slides/Jason-Weston-Reasoning-Alignment-Berkeley-Talk.pdf
+
+</details>
+
+## Lecture 3: On Memory, Reasoning, and Planning of Language Agents
+
+<details>
+
+
+### Ref:
+- https://www.youtube.com/live/zvI4UN2_i-w
+- https://llmagents-learning.org/slides/language_agents_YuSu_Berkeley.pdf
+- https://github.com/OSU-NLP-Group/WebDreamer
+- https://github.com/OSU-NLP-Group/HippoRAG
+
+### **Overview**
+This document reviews a presentation on "Language Agents," AI systems that leverage language for reasoning and communication. It contrasts two development perspectives—**LLM-first** and **Agent-first**—highlighting their unique challenges and opportunities. The discussion focuses on three core competencies:
+1. **Memory** (HippoRAG for long-term memory)
+2. **Reasoning** (Implicit reasoning and "grokking" in Transformers)
+3. **Planning** (Model-based planning for web agents like WebDreamer)
+
+The author argues that language agents represent a major step forward in AI but face ongoing hurdles in **continual learning, safety, and world model development**.
+
+---
+
+### **Key Themes and Takeaways**
+
+#### **The Rise of Language Agents**
+- Language agents are poised to revolutionize computing, as echoed by AI leaders:
+  - Bill Gates: *"Agents are bringing about the biggest revolution in computing..."*
+  - Andrew Ng: *"AI agentic workflows will drive massive AI progress this year."*
+  - Sam Altman: *"2025 is when agents will work."*
+- Current agents are **over-reliant on LLMs** and require significant advancements.
+- Adopts Russel & Norvig’s definition: *“An agent perceives its environment through sensors and acts upon it through actuators.”*
+- **Language Agents** are distinguished by their ability to use language as the primary tool for reasoning and communication.
+
+#### **LLM-First vs. Agent-First Approaches**
+- **LLM-First:** Uses LLMs as the foundation, adding functionalities via prompting and engineering.
+- **Agent-First:** Integrates LLMs into AI agents that tackle traditional AI challenges while introducing new considerations like **synthetic data, self-reflection, and internalized search**.
+
+#### **Language as a Vehicle for Reasoning and Communication**
+- Language agents rely on **instruction following, in-context learning, and customized output**.
+- Introduces the concept of **inner monologue**, where reasoning takes place within the LLM by generating tokens.
+
+#### **Memory: HippoRAG – Neurobiologically Inspired Long-Term Memory**
+- **Memory is critical for AI agents**, paralleling human memory and the **hippocampal indexing theory**.
+- Existing **RAG (Retrieval-Augmented Generation)** models have limitations in retrieving correct information.
+- **HippoRAG** improves memory by indexing and associating information, mimicking human memory structures:
+  - **Neocortex:** Perception, linguistic abilities, and reasoning.
+  - **Parahippocampus:** Bridge between areas, working memory.
+  - **Hippocampus:** Indexing and auto-associative memory.
+
+#### **Reasoning: Grokking in Transformers**
+- Explores the concept of **"grokking"**, where **Transformers transition from memorization to generalization**.
+- Key research questions:
+  - Can Transformers develop **implicit reasoning**, or do fundamental limitations exist?
+  - What factors influence the acquisition of implicit reasoning (**data scale, distribution, architecture**)?
+- **Grokking is a phase transition** where generalization outcompetes memorization.
+
+#### **Planning: Model-Based Planning for Web Agents (WebDreamer)**
+- Planning is essential for **autonomous language agents** but is challenging due to:
+  - **Open-ended action spaces**.
+  - **Difficulty in testing goal achievement**.
+  - **Need for world models** to predict action consequences.
+- **WebDreamer** introduces model-based planning by simulating and predicting web navigation before execution, ensuring safer and more efficient outcomes.
+
+---
+
+### **Future Directions and Challenges**
+1. **Memory:** Personalization and continual learning.
+2. **Reasoning:** Integrating external actions and environmental states.
+3. **Planning:** Building better world models and balancing reactive vs. model-based planning.
+4. **Safety:** Addressing **endogenous (internal) and exogenous (external) risks**.
+5. **Applications:** Expanding into **agentic search, workflow automation, and scientific AI**.
+
+The author concludes that we are at the **dawn of a new era** in AI, with key challenges in **multimodal perception, reasoning, world models, grounding, planning, and continual learning**.
+
+---
+
+### **Quotes of Significance**
+- *"Agents are bringing about the biggest revolution in computing..."* – Bill Gates
+- *"2025 is when agents will work."* – Sam Altman
+- *"An agent is anything that perceives and acts upon its environment."* – Russel & Norvig
+- *"Memory is everything. Without it, we are nothing."* – Eric Kandel
+
+---
+
+### **Conclusion**
+The document provides a comprehensive **overview of language agents**, showcasing their potential to transform AI. While progress has been made, substantial challenges remain in **memory, reasoning, planning, safety, and continual learning**. Research innovations like **HippoRAG and WebDreamer** offer promising solutions, but further work is needed to unlock the full capabilities of language agents.
+
 </details>
 
 
