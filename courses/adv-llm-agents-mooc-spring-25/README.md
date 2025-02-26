@@ -289,5 +289,97 @@ The presentation offers a **detailed exploration of language agents**, illustrat
 
 </details>
 
+## Lecture 4: Open Training Recipes for Reasoning in Language Models
+
+<details>
+
+**Unified Briefing on Open Language Models (LMs)**
+
+This document summarizes key aspects of open language models (LMs), focusing on the OLMo family and the Tülu post-training recipe. It underscores the importance of **open science, transparency, and accessibility** in LM development, covering the stages of pre-training, post-training, test-time inference, and risk mitigation.
+
+---
+
+### **Key Themes and Insights**
+
+#### **The Importance of Open Science in LM Research**
+- Fully open LMs accelerate innovation by ensuring transparency, reproducibility, and accessibility.
+- Analogy: Relying on proprietary models for AI research is like studying astronomy through newspaper pictures.
+- OLMo is developed as a truly open AI, empowering the research community and enhancing public AI literacy.
+
+#### **OLMo: A Fully Open Language Model**
+- Designed for accessibility and reproducibility within an open ecosystem.
+- Competes with **Llama3, Qwen2.5, DeepSeek, and GPT4-o** in performance.
+
+#### **Tülu: Open Post-Training Recipe**
+- Iterative development (*Tülu 1 → 2 → 2.5 → 3*), systematically refining LMs post-training.
+- Toolkit includes **OpenInstruct and Safety Data & Toolkit - Instruct2**.
+- Successful adaptation involves:
+  1. **Targeted evaluations** for meaningful improvements.
+  2. **Representative prompts** for testing and finetuning.
+  3. **License verification** for compliance.
+  4. **Data decontamination** to ensure integrity.
+
+---
+
+### **Core LM Development Stages**
+
+#### **1. Pre-training**
+- Predicting the next word across diverse contexts to create a foundation model.
+
+#### **2. Post-training**
+- Enhances model performance through:
+  - **Supervised Fine-Tuning (SFT)**: Improves model outputs using structured prompt-completion training.
+  - **Tool use and agents**: Equipping LMs with task-specific tools.
+  - **Reasoning**: Enhancing logical and analytical capabilities.
+  - **Safety alignment**: Ensuring ethical and responsible AI behavior.
+  - **Hybrid data curation**: Mixing diverse datasets for skill refinement.
+
+#### **3. Test-time Inference & Scaling**
+- Techniques like **budget forcing** and computational scaling optimize real-time model performance.
+
+---
+
+### **Advanced LM Optimization Techniques**
+
+#### **Supervised Fine-Tuning (SFT) / Instruction Tuning**
+- **Purpose**: Finetunes pretrained LMs with structured prompts.
+- **Challenges**: Data curation is expensive, time-consuming, and has high variance.
+- **Solution**: **Hybrid data creation** (mixing curated data with persona-driven synthesis) ensures efficiency and diversity.
+
+#### **Chain-of-Thought (CoT) Reasoning**
+- **Improves** multi-step problem-solving and logical reasoning.
+- **Challenges**: Manual annotation is expensive and difficult to scale.
+- **Solution**: Hybrid data generation bridges the scalability gap.
+
+#### **Preference Tuning**
+- Aligns LMs with human preferences for better interaction quality.
+- **DPO vs. PPO**:
+  - **Direct Preference Optimization (DPO)**: Efficient, lower complexity, and high throughput.
+  - **Proximal Policy Optimization (PPO)**: Slightly better performance (~1%) but more computationally intensive.
+- **Key Factor**: **Data quality** is paramount for both methods.
+
+#### **Reinforcement Learning with Verifiable Rewards (RLVR)**
+- Addresses **over-optimization** by using rule-based rewards for tasks with ground-truth answers (e.g., math problems).
+- RLVR involves **targeted datasets, verifiers, and PPO training** for enhanced accuracy.
+
+#### **Mid-training Strategy**
+- **99% of training budget** is allocated to **trillions of diverse text tokens**.
+- **1% of budget** is reserved for upsampling high-quality SFT data, maximizing efficiency.
+
+---
+
+### **Overall Takeaways**
+- **Open models (OLMo) and structured post-training (Tülu) are critical for AI progress**.
+- **Data quality, hybrid data creation, and advanced tuning techniques** (RLVR, DPO, SFT) drive LMs' reasoning capabilities.
+- **Open ecosystems foster reproducible research**, empowering the AI community with accessible knowledge and tools.
+
+---
+
+### Ref:
+- https://www.youtube.com/live/cMiu3A7YBks
+- https://llmagents-learning.org/slides/OLMo-Tulu-Reasoning-Hanna.pdf
+
+</details>
+
 
 
