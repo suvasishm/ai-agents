@@ -297,5 +297,171 @@ Ref:
 
 </details>
 
+## Lecture 3: Agentic AI Frameworks & AutoGen
+
+<details>
+
+**Briefing Document: LlamaIndex & AutoGen - Building Knowledge Assistants with Agentic AI**
+
+**Date:** October 26, 2023
+
+---
+
+### **Overview**
+This document provides an overview of **LlamaIndex** and **AutoGen**, two frameworks designed to empower developers in building **production-ready Large Language Model (LLM) applications**, particularly **knowledge assistants** capable of handling complex tasks.
+
+- **LlamaIndex** focuses on **context-augmented LLM applications** over enterprise data.
+- **AutoGen** provides a framework for **agentic AI**, enabling the creation of **multi-agent systems** that can collaboratively solve complex problems.
+
+This document highlights the **limitations of naive Retrieval-Augmented Generation (RAG)**, the advancements in **multimodal RAG**, and the **potential of agentic workflows** in building more robust and capable AI assistants.
+
+---
+
+## **Key Themes & Ideas**
+
+### **1. The Evolution of Knowledge Assistants**
+
+#### **From Basic RAG to Advanced Capabilities**
+- **Challenges with Basic RAG:**
+  - **⚠ Poor query understanding/planning**
+  - **⚠ No function calling or tool use**
+  - **⚠ Stateless, no memory**
+- **Advanced Knowledge Assistants** offer:
+  - **High-quality multimodal RAG**
+  - **Complex output generation**
+  - **Agentic reasoning over complex input**
+  - **Scalability for production use**
+
+#### **Multimodal RAG**
+- **Challenges in processing complex documents** (embedded tables, charts, images, irregular layouts).
+- **LlamaParse**: A solution for **parsing documents into structured formats**.
+- **Multimodal RAG Pipeline:**
+  - Parsing documents into **text and image chunks**
+  - Linking them via **metadata**
+  - Feeding both text & image data into a **multimodal LLM** for synthesis
+
+#### **Agentic Reasoning**
+- **Moving beyond Q&A systems to advanced AI capabilities:**
+  - **Summarization & comparison tasks**
+  - **Multi-part question handling**
+  - **Research-oriented workflows**
+- **Key techniques include:**
+  - **Tool use**
+  - **Query planning**
+  - **Memory retention**
+  - **Reflection**
+
+---
+
+### **2. LlamaIndex: Building Production LLM Apps Over Enterprise Data**
+
+#### **Core Functionality**
+- **LlamaIndex**: An **open-source toolkit** for building **production LLM applications** over enterprise data.
+- Supports **data ingestion, indexing, retrieval, and evaluation**.
+- Accessible via [LlamaIndex Docs](https://docs.llamaindex.ai/) & [GitHub Repo](https://github.com/run-llama/llama_index).
+
+#### **LlamaCloud**
+- **A centralized knowledge interface** for **production LLM applications**.
+- Provides **enterprise-ready security** and **out-of-the-box advanced RAG capabilities**.
+
+#### **LlamaParse**
+- An **advanced document parser** that **reduces LLM hallucinations**.
+- Accurately **parses tables, extracts spatial layouts, and images** from complex documents.
+- **Dean Barr (Carlyle Group)**: *"LlamaParse from LlamaIndex is currently the best technology I have seen for parsing complex document structures for Enterprise RAG pipelines."*
+
+#### **Report Generation & Action-Taking**
+- Supports **interleaving text and image responses** with structured outputs.
+- Enables agents to:
+  - **Produce knowledge work**
+  - **Take actions**, increasing ROI through **time savings & improved capabilities**
+
+---
+
+### **3. AutoGen: A Framework for Agentic AI**
+
+#### **Agentic AI Definition**
+- **AutoGen** enables AI systems that are both **Generative** (creating content) and **Agentic** (executing tasks).
+- Cited from Zaharia et al. (2024): *"The Shift from Models to Compound AI Systems."*
+
+#### **Benefits of Agentic AI**
+- **Natural interaction** with human users.
+- **Minimal human intervention** in executing tasks.
+- **Intuitive programming paradigm**.
+
+#### **Agentic Programming & Multi-Agent Orchestration**
+- **Handles complex tasks through:**
+  - **Iteration & divide-and-conquer strategies**
+  - **Validation & reasoning**
+- **Multi-agent orchestration includes:**
+  - **Static/Dynamic configurations**
+  - **NL/PL-based interactions**
+  - **Cooperation vs. competition setups**
+  - **Centralized vs. decentralized control**
+
+#### **Enterprise Adoption**
+- **AutoGen is widely used** in industries like **Finance, Biotech, Consulting, and Retail**.
+- **Industry Quote:** *"AutoGen is the gold standard for applied enterprise agentic orchestration."*
+
+---
+
+### **4. Agentic Workflows & Orchestration**
+
+#### **LlamaIndex Workflows**
+- **Event-driven, composable, flexible, and debuggable**.
+- Code-first approach makes it **readable and scalable**.
+
+#### **Constrained vs. Unconstrained Flows**
+- **Constrained Flows**: More reliable but less expressive.
+- **Unconstrained Flows**: More expressive but less predictable.
+
+#### **Running Agents in Production**
+- **Key requirements for successful deployment:**
+  - **Encapsulation & re-use**
+  - **Standardized communication interfaces**
+  - **Scalability & human-in-the-loop systems**
+  - **Debugging & observability tools**
+
+---
+
+### **5. Challenges & Risks**
+
+#### **Data Quality is Critical**
+- *"Garbage in = garbage out"* – Poor data quality leads to poor AI performance.
+
+#### **LLM Hallucinations**
+- **Advanced document parsing** is needed to reduce AI-generated misinformation.
+
+#### **Reliability & Trust**
+- *"LLMs need to achieve a greater degree of reliability."*
+- **Human-in-the-loop oversight** is necessary for safety and trust.
+
+---
+
+### **6. Technical Implementation**
+- **Defining Pipelines & Query Workflows**
+- Example setup for **flow-based AI workflows**
+- **Deploying LlamaIndex & AutoGen-based architectures**
+
+---
+
+### **Conclusion**
+LlamaIndex and AutoGen provide **complementary solutions** for building **advanced AI assistants**:
+- **LlamaIndex** focuses on **data retrieval, indexing, and structured output generation**.
+- **AutoGen** enables **multi-agent orchestration for complex task execution**.
+
+Both frameworks represent **major advancements** in **enterprise AI applications**, but challenges remain in **data quality, AI reliability, and safety**. Future AI systems will need a balance of **scalability, security, and human oversight** to fully realize their potential.
+
+---
+
+**NotebookLM Disclaimer:** NotebookLM responses may contain inaccuracies; please verify information before implementation.
+
+
+Ref:
+- https://www.youtube.com/live/OOdtmCMSOo4
+- https://llmagents-learning.org/slides/autogen.pdf
+- https://llmagents-learning.org/slides/MKA.pdf
+
+</details>
+
 
 
