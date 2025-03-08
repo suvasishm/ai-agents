@@ -463,7 +463,7 @@ Ref:
 
 </details>
 
-## Lecture 3: Generative AI Trends in Enterprise
+## Lecture 4: Generative AI Trends in Enterprise
 
 <details>
 
