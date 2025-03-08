@@ -381,5 +381,140 @@ This document summarizes key aspects of open language models (LMs), focusing on 
 
 </details>
 
+## Lecture 5: Coding Agents and AI for Vulnerability Detection
+
+<details>
+
+### **Briefing Document: Coding Agents and AI for Vulnerability Detection**  
+**Author**: Based on excerpts from *L5_Code_Agents_Vulnerability_Detection.pdf* by Charles Sutton  
+**Date**: October 26, 2024  
+
+---
+
+## **Executive Summary**  
+This document explores the application of **Large Language Model (LLM) agents** in **software engineering and security**, particularly for **vulnerability detection**. It covers the **evolution of evaluation metrics**, introduces **coding agents (SWE-Agent, Agentless, AutoCodeRover, Passerine)**, and discusses their use in **Capture the Flag (CTF) competitions** and **real-world security applications** through **Google’s Big Sleep project**.  
+
+The key takeaway is that **LLM agents provide a promising yet underexplored approach to AI-driven security**, with **evaluation-driven improvements, trade-offs in agent design, and practical implementations in vulnerability detection**.  
+
+---
+
+## **Key Themes and Ideas**  
+
+### **1. Rise of Coding Agents & AI for Software Engineering**  
+**Definition of LLM Agents**:  
+LLM agents are defined as **"multi-turn LLMs with tool use"**, characterized by:  
+- **Dynamic computation time**  
+- **Information retrieval from external tools**  
+- **Hypothesis testing and validation**  
+- **Action execution based on results**  
+
+#### **Agent Designs & Trade-offs:**  
+The document explores different **coding agent designs**:  
+1. **SWE-Agent (Dynamic Approach)**  
+   - Uses **planning, chain of thought reasoning, tool use, and execution feedback.**  
+   - Implements the **ReACT loop** (*LLM generates output → Runs tools → Updates trajectory*).  
+   - More **adaptive** for complex problem-solving.  
+
+2. **Agentless (Procedural Approach)**  
+   - **No persistent agent loop; control flow is in Python code.**  
+   - Preferred when the **workflow is simple** and doesn’t require dynamic decision-making.  
+   - Avoids **LLM trajectory errors**, making it more **robust but less flexible**.  
+
+3. **Hybrid Models (AutoCodeRover, Passerine)**  
+   - Combine **some procedural control** with **agent-driven exploration**.  
+   - Useful for **structured software improvements** and **debugging workflows**.  
+
+---
+
+### **2. Evaluation Metrics: The Backbone of Model Design**  
+Evaluation metrics **drive LLM model and agent design**.  
+- **Early benchmarks (MBPP, HumanEval)**: Useful in 2021 but now **leaked, too easy, and limited in test cases.**  
+- **SWE-Bench & SWE-Bench Verified**:  
+  - A **realistic evaluation benchmark** that has **driven advances in agent development**.  
+  - Verified variant removes **underspecified and less relevant test cases**, improving signal-to-noise ratio.  
+- **Challenges in Evaluation**:  
+  - "All evaluations have a shelf life"—new tests are needed as models improve.  
+  - Data leakage, inexact verifiers, and overfitting to leaderboards are growing concerns.  
+
+**Design Considerations in Evaluation:**  
+- **Level of difficulty** must be balanced.  
+- **Realism** should match real-world coding scenarios.  
+- **Generalizability** ensures models **aren’t just learning shortcuts to pass benchmarks**.  
+
+---
+
+### **3. AI for Computer Security: Capture the Flag (CTF) & Vulnerability Detection**  
+**CTF competitions as AI Benchmarks**  
+LLM agents are adapted for **security tasks** using datasets like:  
+- **NYU CtF Bench (2025):** 200 problems from real-world CTF challenges.  
+- **InterCode-CtF (2023):** 100 tasks from **high school-level** PicoCTF.  
+
+#### **Agent Adaptation for Security Tasks**  
+To tackle **CTF challenges**, coding agents integrate:  
+- **Command-line execution (sandboxed)**  
+- **Decompilers & disassemblers**  
+- **Python libraries (for cryptography, forensics, etc.)**  
+- **Debuggers (GDB, Pwntools for memory exploits)**  
+
+**"Arbitrary command line (use a sandbox!)" is critical for security-related LLM applications.**  
+
+---
+
+### **4. Big Sleep: AI for Real-World Vulnerability Detection**  
+The **Big Sleep project at Google** represents a **major leap in AI-driven security research**.  
+
+**Objective**: Find security vulnerabilities using **LLM agents with reasoning, execution, and verification**.  
+
+#### **Big Sleep's Methodology**:  
+- **Step 1: Code Navigation** – LLM browses code, jumps to definitions, and follows references.  
+- **Step 2: Hypothesis Generation** – AI **predicts possible security flaws** (e.g., buffer overflow).  
+- **Step 3: Dynamic Testing** – Executes **debugging tools, interpreters, and test inputs**.  
+- **Step 4: Verification** – Confirms vulnerabilities using **sanitizer crashes, memory safety checks, and execution feedback**.  
+
+#### **Results & Impact**:  
+- **Achieved a 1.00 score in buffer overflow detection (from 0.05).**  
+- **76% success rate in advanced memory corruption detection (up from 24%).**  
+- **Discovered a real-world vulnerability in SQLite.**  
+
+**Key Takeaways:**  
+- **Dynamic AI agents outperform traditional fuzzing & static analysis** in some security domains.  
+- **Execution-based verification makes AI more reliable in detecting real vulnerabilities.**  
+- **Big Sleep proves that AI agents can autonomously detect security flaws at an expert level.**  
+
+---
+
+## **Future Directions & Implications**  
+- **AI for security is still a "wide open area" with untapped potential.**  
+- **More research needed in network security, malware detection, and adversarial attacks.**  
+- **Real-world deployment of AI security agents will require stronger evaluation benchmarks.**  
+- **Moving from CTFs to real-world tasks is the next major step.**  
+
+---
+
+## **Important Quotes**  
+- *"LLM agents are multi-turn LLMs with tool use."*  
+- *"Evaluations drive the design of the models. Organizational-level Bayesian optimization."*  
+- *"All evaluations have a shelf life."*  
+- *"If workflow really is simple, why make the LLM figure it out?"*  
+- *"Agentic techniques seem particularly natural. Can require larger-scale understanding of software or system."*  
+- *"Arbitrary command line (use a sandbox!)"*  
+
+---
+
+## **Final Thoughts**  
+LLM-powered security agents are **emerging as a viable method for vulnerability detection**, surpassing traditional **fuzzing and static analysis** in some domains. However, the **design space for AI security remains vast**, with **open challenges in evaluation, real-world deployment, and system-level reasoning**.  
+
+---
+
+### **Best of Both Approaches**  
+✅ **Quick, structured overview** (from the first summary)  
+✅ **Deep, in-depth analysis with key details** (from the second briefing)  
+✅ **Formatted for clarity, readability, and impact**  
+
+### Ref:
+- https://www.youtube.com/live/JCk6qJtaCSU
+- https://llmagents-learning.org/slides/Code%20Agents%20and%20AI%20for%20Vulnerability%20Detection.pdf
+
+</details>
 
 
