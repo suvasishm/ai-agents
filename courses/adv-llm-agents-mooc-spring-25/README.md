@@ -517,4 +517,179 @@ LLM-powered security agents are **emerging as a viable method for vulnerability 
 
 </details>
 
+## Lecture 6: Autonomous Multimodal AI Agents: Web and Beyond
+
+<details>
+
+  ### **Multimodal Autonomous AI Agents: Comprehensive Summary**
+
+This summary combines the best aspects of brevity and technical depth, providing a **structured yet detailed** overview of the key concepts from **Russ Salakhutdinov's lecture on multimodal AI agents**.
+
+---
+
+## **1. Large Language Models (LLMs) as a Foundation for AI Agents**
+The lecture begins by emphasizing **LLMs as the backbone** of autonomous AI agents, detailing their strengths and limitations.
+
+### **Key Capabilities of LLMs:**
+- **In-context learning**: Ability to generalize based on contextual cues in the input.
+- **Zero-shot abilities**: Can perform tasks they haven't been explicitly trained on.
+- **Long and coherent text generation**: Essential for complex reasoning and decision-making.
+- **Strong text representations**: Helps in understanding and encoding textual information.
+- **Sensitivity to word ordering**: Crucial for nuanced comprehension and response generation.
+- **World knowledge**: Learned from vast training data, but with limitations in real-time updates.
+
+---
+
+## **2. The Emergence of Autonomous AI Agents**
+AI agents are being developed to **automate digital tasks** and **enhance human productivity**, particularly for web-based activities.
+
+### **Potential Use Cases:**
+- **Automating repetitive digital tasks** (e.g., generating PowerPoint slides from a research paper).
+- **Navigating the web** to retrieve structured data.
+- **Performing human-like browsing and decision-making**.
+
+These agents combine **LLMs, reinforcement learning, and multimodal capabilities** to operate in increasingly complex environments.
+
+---
+
+## **3. Challenges in Web-Based AI Agents**
+The lecture highlights the **current limitations of web agents**, particularly when dealing with **HTML and text-based environments**.
+
+### **WebArena: Early Benchmarks & Limitations**
+- Designed as **the most realistic web-based evaluation** for AI agents.
+- Uses real-world data from **Amazon, Reddit, GitHub**, etc.
+- Tasks involve interacting with only **text and HTML**, leading to **low success rates** for AI.
+
+### **Why HTML Alone is Insufficient**
+- **Messy HTML & JavaScript**: Code is often **minified and compressed**, making parsing difficult.
+- **Interactive elements**: JavaScript-driven UI elements **don't render well in raw HTML**.
+- **Spatial layout issues**: Webpages rely on **visual structure**, which HTML alone cannot capture.
+- **Context length constraints**: HTML pages often exceed **100k tokens**, making them difficult for LLMs to process.
+
+---
+
+## **4. VisualWebArena: A Benchmark for Multimodal Web Agents**
+To overcome the limitations of **text-based web navigation**, the researchers introduced **VisualWebArena**, a **multimodal** testbed.
+
+### **Key Features of VisualWebArena:**
+- Includes **visual inputs** to complement **HTML parsing**.
+- Uses **POMDP (Partially Observable Markov Decision Process)** framework:
+  - **Observations**: Captures both **visual and textual** information.
+  - **Actions**: Agents can **click, type, hover, and stop**.
+  - **Reward function**: Evaluates success based on **task completion**.
+
+### **Example Tasks in VisualWebArena:**
+- **Shopping Task**: "Buy the cheapest color photo printer and send it to Emily."
+- **Classifieds Task**: "Find a specific bike for $300-$500 and negotiate $10 less."
+- **Reddit Task**: "Find the 2022 total GDP of the region producing the most sugarcane in 2021."
+
+**Results:**
+- **Human success rate: 78%**
+- **AI agent success rate: 14%** (indicating significant room for improvement)
+
+---
+
+## **5. Architectures for Multimodal Web Agents**
+The lecture introduces **several architectural advancements** aimed at improving AI interaction with web environments.
+
+### **Key Approaches:**
+#### **1. Web Agent Architecture**
+- **Input**: HTML + Image.
+- **Processing**: **Observation Parsing + High-Level Planning + Low-Level Action Generation**.
+- **Actions**: Stop, Type, Click, Hover.
+
+#### **2. LLM + Visual Encoder + Web Grounding**
+- Uses **Set-of-Marks (SoM) prompting** to help agents **interact with UI elements**.
+- Alternative to **cluttered HTML trees** and inefficient **accessibility parsers**.
+
+---
+
+## **6. Search & Planning for Long-Horizon Tasks**
+One of the biggest **challenges in autonomous agents** is **long-horizon reasoning**.
+
+### **Common AI Failure Modes:**
+1. **Looping behavior**: Agents get stuck switching between pages.
+2. **Undoing progress**: Performing the right action but reversing it later.
+3. **Early stopping**: Ending tasks prematurely.
+4. **Visual processing failures**: Misclicking or failing to identify elements.
+
+To address these, the researchers propose **tree search methods** to improve decision-making.
+
+### **Tree Search for Language Model Agents**
+- **Baseline Approach:** AI models perform **repeated action sampling** until they reach a solution.
+- **Proposed Method:** A **Best-First Search algorithm** with:
+  - **Baseline agent** for action proposals.
+  - **Backtracking mechanism** to correct errors.
+  - **Value function scoring** (using GPT-4o to rank best states).
+
+**Results:**
+- **Search-based models significantly outperform baseline LLMs** on long-horizon tasks.
+- **However, search methods are computationally expensive and require further optimization**.
+
+---
+
+## **7. AI Agents & Internet-Scale Training (InSTA)**
+One of the **biggest challenges in AI agents** is the **lack of high-quality training data**. 
+
+### **Proposed Solution: Synthetic Task Generation**
+Researchers use **Llama models** to **generate realistic web tasks** for AI training.
+
+### **Synthetic Data Generation Pipeline:**
+1. **Stage 1 – Task Generation**: Llama proposes web-based tasks.
+2. **Stage 2 – Task Evaluation**: AI performs tasks and Llama scores them.
+3. **Stage 3 – Data Collection**: High-confidence tasks are stored for training.
+
+### **Key Findings:**
+- **LLM performance is 68.92% lower than humans** on **VisualWebArena**.
+- **Synthetic data significantly improves generalization**:
+  - **Mind2Web: +156.3% improvement**
+  - **WebLINX: +149.0% improvement**
+
+### **Scaling Up:**
+- Researchers use **Common Crawl PageRank** to identify **150k+ useful websites**.
+- **AI filtering achieves 97% accuracy** in detecting valid training data.
+
+---
+
+## **8. Robotics & Physical AI Agents**
+The lecture briefly extends **multimodal agents** to **robotic manipulation**.
+
+### **Plan-Sequence-Learn (PSL) Framework**
+- Uses **structured language plans** for **long-horizon robotic tasks**.
+- Combines **reinforcement learning (RL)** with **LLM-guided decision-making**.
+- Successfully **generalizes to new object geometries**.
+
+**Results:**
+- PSL achieves **85%+ success rates** across **25+ long-horizon robotic tasks**.
+
+---
+
+## **9. Future Directions & AI Safety Considerations**
+### **Key Areas for Future Work:**
+1. **Improved long-term reasoning**: AI should maintain consistency over **multi-step tasks**.
+2. **Multimodal vision-language models**: Stronger **visual grounding** is needed for **real-world applications**.
+3. **Parallel execution & task coordination**: Agents should **search, execute, and verify multiple instances** in real-time.
+4. **AI Safety**:
+   - Ensuring **robustness against adversarial inputs**.
+   - Addressing **biases in training data**.
+   - Handling **destructive actions** (e.g., real-world purchasing).
+
+---
+
+## **10. Conclusion**
+- **VisualWebArena** provides a **realistic benchmark** for evaluating multimodal agents.
+- **Inference-time search & tree search** improve **long-horizon AI decision-making**.
+- **Synthetic data generation** helps **scale AI training for web-based tasks**.
+- **Plan-Sequence-Learn (PSL)** extends AI agents to **robotic manipulation**.
+
+🚀 **The future of AI agents lies in improving multimodal understanding, data efficiency, and safety for real-world applications.**
+
+
+  ### Ref:
+  - https://www.youtube.com/live/RPINOYM12RU
+  - https://llmagents-learning.org/slides/ruslan-multimodal.pdf
+
+
+</details>
+
 
