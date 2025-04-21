@@ -689,6 +689,177 @@ The lecture briefly extends **multimodal agents** to **robotic manipulation**.
   - https://www.youtube.com/live/RPINOYM12RU
   - https://llmagents-learning.org/slides/ruslan-multimodal.pdf
 
+</details>
+
+
+## Lecture 7: Multimodal Agents – From Perception to Action
+
+<details>
+
+
+## 📌 Overview
+
+This document presents a comprehensive review of the latest advancements in **Multimodal Agents (MMAs)**—AI systems that integrate vision, language, and action to operate across complex digital interfaces. It explores new environments, benchmarks, models, and data generation methods that drive progress in AI agents capable of reasoning and taking actions in real or virtual computing environments.
+
+---
+
+## 🚀 Key Themes
+
+### 1. Rise of Multimodal Agents
+- Multimodal agents powered by **Vision-Language-Action Models (VLA-Ms)** can execute real-world digital tasks across web, OS, and mobile environments.
+- These agents aim to boost digital productivity, accessibility, and autonomy.
+- Supported by models like GPT-4V, Claude-3, Gemini-Pro, and open-source Mixtral, CogAgent.
+
+---
+
+## 🧪 Limitations of Existing Benchmarks
+
+### 🔴 Problems:
+- Existing platforms (e.g., **Mind2Web**, **WebArena**) are:
+  - Non-executable.
+  - App/domain specific.
+  - Not scalable or realistic.
+
+### ✅ Solution: OSWorld
+- **OSWorld** is a VM-based benchmark with:
+  - **369 annotated tasks** using real apps and workflows.
+  - Full environment simulation (input/output, keyboard/mouse, screenshot, a11y-tree).
+  - **Execution-based evaluation** using final environment states.
+
+---
+
+## 👀 Agent Interaction Mechanics
+
+| Component         | Description                                               |
+|-------------------|-----------------------------------------------------------|
+| Inputs            | Natural language, screenshots, accessibility tree (a11y)  |
+| Actions           | Executable keyboard and mouse operations (e.g., pyautogui)|
+| Interaction Loop  | Agent runs iteratively until termination condition met    |
+| Evaluation        | Compared against expected output ("gold") via config      |
+
+### Observations:
+- High-res screenshots improve accuracy.
+- Text-based action history > screenshot-only (but less efficient).
+- Models show strong OS-level performance correlation but poor layout robustness.
+
+---
+
+## 📉 Data Scarcity & Cost
+
+### Challenge:
+- Unlike LLMs trained on vast text corpora, agent models require **expensive, human-annotated trajectory data**.
+
+---
+
+## 🧪 Synthetic Data Solutions
+
+### 1. AgentTrek (Trajectory Synthesis)
+- Extracts and classifies **web tutorials** to guide agent replay.
+- Parses task steps, environments, outcomes.
+- Focused on imitation learning; ideal when combined with **reinforcement learning in OSWorld**.
+
+### 2. TACO + CoTA (Action + Reasoning Data)
+- Generates **Chains-of-Thought-and-Action (CoTA)** using programmatic templates.
+- Boosts reasoning and action-calling in Multimodal LLMs.
+- Actions include: OCR, GETOBJECTS, QUERYKNOWLEDGEBASE, etc.
+
+#### Key Learnings:
+- **Quality > Quantity** in training data.
+- CoTA fine-tuning consistently outperforms instruction-only training or few-shot prompting.
+
+---
+
+## 🧠 Unified GUI Agent Framework
+
+### AGUVIS (Pure Vision-Based GUI Agent)
+- Solves:
+  - Heterogeneous textual GUI representation (HTML, AXTree, XML).
+  - Lack of visual grounding and inner reasoning.
+- Features:
+  - Unified vision-based perception and action space.
+  - Two-stage training:
+    - 1M+ GUI grounding examples.
+    - 35K multi-step reasoning tasks with **inner monologue** augmentation.
+- Demonstrates strong **cross-platform generalization** (web/mobile → desktop).
+
+---
+
+## 🎥 Long Video Understanding
+
+### Problem:
+- Long-form videos → huge token sequences → compute overload.
+
+### Solutions:
+
+#### 1. xGen-MM-Vid (BLIP-3-Video)
+- Temporal encoder compresses videos into just **32–128 visual tokens**.
+- More efficient than prior SOTA models (e.g., 4608 tokens).
+- Scales to long-video question answering and description tasks.
+
+#### 2. GenS (Generative Frame Sampler)
+- Trained on **GenS-Video-150K** dataset.
+- Predicts **salient frame spans** using instructions and confidence scores.
+- Outperforms CLIP-based sampling in temporal QA and event localization.
+- Supports **sliding-window inference** with JSON-formatted outputs.
+
+---
+
+## 🧩 Ecosystem Overview
+
+| Module           | Functionality                                             |
+|------------------|-----------------------------------------------------------|
+| `OSWorld`        | Realistic, execution-based VM environment for agents      |
+| `AgentTrek`      | Synthesizes trajectories from tutorial-based knowledge     |
+| `TACO + CoTA`    | Reasoning and action-call fine-tuning for MLLMs           |
+| `AGUVIS`         | GUI agent with visual-only perception + inner monologue   |
+| `BLIP-3-Video`   | Token-efficient video understanding model                 |
+| `GenS`           | Intelligent frame selector for long-video processing      |
+
+---
+
+## ✅ Final Takeaways
+
+- **Realistic training environments** are essential (e.g., OSWorld).
+- **Synthetic data** (AgentTrek, CoTA) solves scale and diversity issues in agent training.
+- **Unified perception-action space + structured reasoning** unlocks general-purpose agents (e.g., AGUVIS).
+- **Efficient video models + frame sampling** (xGen-MM-Vid, GenS) allow scalable long-video understanding.
+
+---
+
+## 📣 Quotes from the Source
+
+> “Intelligence grows rapidly, even surpassing humans.”
+
+> “No real, scalable interactive environments... Only demos without executable environment...”
+
+> “OSWorld: The first scalable, real computer environment.”
+
+> “LLMs and VLMs are still far from being digital agents on real computers.”
+
+> “AgentTrek… leverages tutorial-like web content to create step-by-step synthetic trajectories.”
+
+> “CoTA fine-tuning significantly boosts reasoning and action performance, outperforming few-shot prompting.”
+
+> “AGUVIS enables autonomous GUI agents to operate across platforms using only visual observations.”
+
+> “xGen-MM-Vid uses significantly fewer tokens (32 vs. 4608) than other state-of-the-art models.”
+
+> “GenS predicts frame spans as a natural language generation task with confidence scores.”
+
+---
+
+## 📥 Additional Resources
+
+- [OSWorld Benchmark](https://os-world.github.io)  
+- [xGen-MM-Vid Paper](https://arxiv.org/abs/2410.16267)  
+- [BLIP-3-Video Overview](https://www.salesforceairesearch.com/opensource/xGen-MM-Vid/index.html)
+
+---
+
+  ### Ref:
+  - https://www.youtube.com/live/n__Tim8K2IY
+  - https://llmagents-learning.org/slides/Multimodal_Agent_caiming.pdf
+
 
 </details>
 
