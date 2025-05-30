@@ -863,4 +863,928 @@ This document presents a comprehensive review of the latest advancements in **Mu
 
 </details>
 
+## Lecture 8: AlphaProof: RL Meets Formal Mathematics
+
+<details>
+
+**Author**: Thomas Hubert
+**Date**: March 2025
+**Affiliation**: Google DeepMind
+**Event**: Performance at the IMO 2024
+
+---
+
+## 📌 Overview
+
+AlphaProof is a pioneering research project at the intersection of **Reinforcement Learning (RL)** and **Formal Mathematics**, developed by **Google DeepMind**. Inspired by the successes of the **AlphaZero series** in mastering complex environments through scaled-up self-play, AlphaProof applies similar methods to **mathematical theorem proving** using the **Lean proof assistant** and its mathematical library, **Mathlib**.
+
+The central thesis:
+
+> *Formal mathematics provides a perfect environment and feedback signal for RL agents to learn mathematical reasoning, potentially achieving superhuman capabilities and uncovering new mathematical knowledge.*
+
+The project culminated in AlphaProof’s participation in the **International Mathematical Olympiad (IMO) 2024**, where it achieved performance equivalent to a **Silver medallist**, marking a major milestone in AI-driven mathematical discovery.
+
+---
+
+## 🧠 Motivation: Why Formal Maths + RL?
+
+### Mathematics: A Root Node to Intelligence
+
+* Involves **reasoning, generalisation, planning, creativity**, and **open-ended complexity**.
+* Even considered to require an *“eye for beauty”*.
+
+### From Ancient Proofs to Code
+
+* Formal proof has evolved from prose (e.g., Babylonian algebra) → symbolic notation → machine-verifiable proofs.
+* Computer formalisation brings:
+
+  * **Rigor & clarity**
+  * **Efficient communication**
+  * **Unification across fields**
+  * **Discovery of new theorems**
+
+---
+
+## 🖥️ Key Technologies
+
+### 🧮 Lean
+
+* **Programming language**, **interactive theorem prover**, and **proof assistant**.
+* Hosts a growing, **vibrant open-source community**.
+* Has formalized even **Fields Medal-level** mathematics.
+
+### 📚 Mathlib
+
+* The core math library for Lean.
+* Built entirely open-source by volunteers.
+* Covers \~80% of undergraduate curriculum, but with **coverage gaps** (notably in **2D Euclidean Geometry**).
+
+---
+
+## 💡 Computer Formalisation: Opportunities and Limitations
+
+### ✅ Synergies ("Instant Wins")
+
+* **Perfect verification**: Eliminate correctness concerns.
+* **Giant proofs**: Can be trusted via automated checking.
+* **Education**: Turns mathematics into an interactive "video game".
+* **Collaboration**: Allows large-scale coordination, like software engineering.
+
+### ❌ Current Challenges
+
+* <1% adoption among mathematicians.
+* Steep learning curve and time investment.
+* Tooling and library maturity are still evolving.
+* Creative or intuitive steps in proofs remain elusive to current systems.
+
+---
+
+## 🧬 Reinforcement Learning (RL)
+
+### Definition
+
+> "RL is trial and error learning" — agents interact with environments to maximize rewards.
+
+### Proven Track Record
+
+* **AlphaGo**, **AlphaZero**, **MuZero**, **AlphaTensor**, **AlphaStar**, etc.
+* Common attributes of success:
+
+  * **Scaled trial and error**
+  * **Grounded feedback**
+  * **Search and Curriculum**
+  * **Tabula rasa learning** ("Zero Philosophy")
+
+---
+
+## 🚀 AlphaProof: The Architecture
+
+### Core Components
+
+| Component              | Function                                                     |
+| ---------------------- | ------------------------------------------------------------ |
+| **Formaliser Model**   | Translates natural language problems → Lean formalisation    |
+| **Prover Model**       | Suggests tactics (actions) based on current Lean proof state |
+| **AlphaZero-style RL** | Trains the agent by simulating and verifying proof steps     |
+| **Test-Time RL**       | Fine-tunes model on IMO-level problems via curated variants  |
+
+---
+
+## 🧪 The IMO 2024 Apollo Program
+
+### Goal
+
+> *Can AlphaProof solve real IMO problems with sufficient time and compute?*
+
+### IMO Overview
+
+* World’s most prestigious math competition for high school students.
+* Only **6 elite students** represent a country out of \~17 million globally.
+* Problems are **extremely hard**, test **reasoning** not knowledge, and often take **hours to solve**.
+
+### Execution Timeline
+
+| Date          | Highlights                                                                                |
+| ------------- | ----------------------------------------------------------------------------------------- |
+| **Jan 2024**  | Realized 2D geometry coverage in Mathlib was weak. Joined forces with **AlphaGeometry**.  |
+| **Mar 2024**  | Decided to run in “hard mode”: AlphaProof must **generate** and **prove** answers itself. |
+| **Jul 16-17** | AlphaProof and AlphaGeometry tackled all 6 IMO problems using formalised inputs.          |
+| **Jul 18-19** | Progress reviewed; email logs show post-contest improvements and completed proofs.        |
+
+---
+
+## 🧾 Performance Summary
+
+### Scores
+
+| Problem | Domain        | Result           | Agent           | Points    |
+| ------- | ------------- | ---------------- | --------------- | --------- |
+| P1      | Algebra       | Partially Solved | AlphaProof      | 3/7       |
+| P2      | Number Theory | Largely Solved   | AlphaProof      | 6/7       |
+| P3      | Combinatorics | No Progress      | AlphaProof      | 0/7       |
+| P4      | Geometry      | Fully Solved     | AlphaGeometry   | 7/7       |
+| P5      | Combinatorics | No Progress      | AlphaProof      | 0/7       |
+| P6      | Algebra       | Partially Solved | AlphaProof      | 2/7       |
+|         |               |                  | **Total Score** | **18/42** |
+
+> “We reached the score of a Silver medallist and missed the Gold threshold by one point (with more time and more compute!).”
+
+---
+
+## 🧠 Methodology Pipeline
+
+### 1. **Auto-Formalisation**
+
+* Train a formaliser to translate millions of natural language problems into Lean.
+
+### 2. **Supervised Pretraining**
+
+* Learn from Mathlib’s 300k+ lines of human-written proofs.
+
+### 3. **AlphaZero RL**
+
+* Use Lean to simulate proof steps.
+* Update the prover with reward for each successful proof.
+
+### 4. **Test-Time RL**
+
+* Generate **problem variants**.
+* Focus train the agent to tackle IMO-level “hard” problems using nearby easier examples.
+
+---
+
+## 🧗 Challenges
+
+* **Data mismatch**: Most mathematical knowledge is in *natural language*, not formal systems.
+* **Coverage gaps** in Mathlib (especially geometry and combinatorics).
+* **Computational cost**: Orders of magnitude greater than human effort.
+* **Creativity** and **mathematical elegance** remain difficult to encode.
+
+---
+
+## 🔮 What’s Next?
+
+* Expand coverage to the **entire mathematical landscape**.
+* Contribute to **frontiers of mathematical research**.
+* Make AlphaProof a **tool for every mathematical thinker**, not just a benchmark system.
+
+> “Individually, this was almost impossible. Together, it felt impossible to fail.”
+
+---
+
+## 🧵 Key Quotes
+
+* *"Mathematics, a root node to intelligence?"*
+* *"Computer Formalisation unlocks enormous synergies"*
+* *"Transforms mathematics into a video game 🎉!"*
+* *"Perfect verification will in the long run be the most important property for mathematics."*
+* *"SuperScale RL: A Proven Recipe to Superintelligence"*
+* *"Lean gives us a way to scale up trial and error..."*
+* *"I find the fact that the program can come up with a somewhat complicated construction like this very impressive."* – Prof. Sir Timothy Gowers
+
+---
+
+### Ref:
+- https://www.youtube.com/live/3gaEMscOMAU
+- https://llmagents-learning.org/slides/alphaproof.pdf
+
+
+</details>
+
+## Lecture 9: Formal Reasoning Meets LLMs in Math and Verification
+
+<details>
+
+
+# 🧠 AI for Mathematics and Verification
+
+**Source**: *“L9\_Language\_Models\_For\_Autoformalization\_And\_Theorem\_Proving.pdf” by Kaiyu Yang (Meta FAIR)*
+**Date**: Late 2024 – Early 2025 (inferred from citations)
+**Subject**: Application of Large Language Models (LLMs) to mathematical reasoning, formal proof generation, and automated verification.
+
+---
+
+## 🎯 Motivation: Why Math and Coding?
+
+Mathematics and programming are ideal domains for testing LLM capabilities because they:
+
+* Act as **proxies for complex reasoning and planning**.
+* Offer **automatic evaluation**:
+
+  * **Math**: answers can be directly verified.
+  * **Code**: correctness is testable via unit tests.
+* Represent a structured path toward general AI reasoning and planning.
+
+---
+
+## 🛠️ How LLMs Are Trained for Mathematical Reasoning
+
+### 1. **Supervised Finetuning (SFT)**
+
+* Uses curated datasets of math problems with solutions (step-by-step or tool-integrated).
+* Leverages tools like `sympy` for symbolic reasoning.
+* Datasets reach \~900K problems but often lack intermediate reasoning steps.
+* **Slogan**: *“Good data is all you need!”*
+
+### 2. **Reinforcement Learning (RL)**
+
+* Optimizes LLMs using **verifiable final answers** as a reward signal.
+* Especially useful for numeric problems (e.g., DeepSeekMath).
+* Inadequate for proofs where final answers aren’t scalar.
+* **Slogan**: *“Verifiability is all you need!”*
+
+> **State-of-the-art LLMs ≈ Pretrained foundation model + Finetuning + RL + Engineering**
+
+---
+
+## 🚧 Current Gaps and Limitations
+
+### Gap 1: **Pre-College → Advanced Math**
+
+* LLMs excel in contests like AIME or USAMO.
+* Struggle with **research-level math** involving abstract reasoning and deep theorems.
+
+### Gap 2: **Answer Guessing → Proof Generation**
+
+* LLMs often produce plausible but **invalid or incomplete proofs**.
+* Unable to **bridge logical gaps** common in informal proofs.
+
+### Root Causes:
+
+* **Data Scarcity**: Advanced math proofs are rarely available in structured form.
+* **Lack of Verifiability**: Current evaluation lacks fine-grained, formal correctness checking.
+
+---
+
+## 🔍 The Missing Ingredient: Formal Mathematical Reasoning
+
+To overcome these limitations, the document advocates for integrating **formal logic-based systems**:
+
+* **Foundations**:
+
+  * First-order / higher-order logic
+  * Dependent type theory
+  * Formal specs in programming languages (e.g., Lean)
+
+### Benefits of Formal Systems:
+
+* **Verification**: Ensures logical soundness, eliminating hallucination.
+* **Feedback**: Auto-checkable proofs enable iterative learning.
+* **Scarcity Mitigation**: Feedback can substitute for labeled training data.
+
+---
+
+## 🧰 Proof Assistants and the Role of Lean
+
+* **Lean** is a proof assistant used to write **machine-checkable formal mathematics**.
+* Provides:
+
+  * Formal syntax and semantics.
+  * Tactic-based proof construction (e.g., `induction`, `simp`, `rfl`).
+* Lean formalizations mirror structured programming, making them suitable for AI learning.
+
+---
+
+## 🤝 AI Meets Formal Mathematics
+
+### Key Projects:
+
+#### 🧠 **AlphaProof**
+
+* Combines **LLMs + Reinforcement Learning + Lean**.
+* Proves theorems using search-based strategies and feedback from formal verification.
+* Avoids hallucination by deferring correctness checking to Lean.
+
+#### 🧪 **LeanDojo** (Open Source)
+
+* A comprehensive platform offering:
+
+  * \~98K theorems
+  * \~217K proof tactics
+  * Data tools, trained checkpoints, and Lean interop.
+* Benchmarks and trains LLMs for theorem proving in Lean.
+
+#### 🔍 **ReProver (Retrieval-Augmented Proving)**
+
+* Retrieves relevant premises to guide proof generation.
+* Reduces search complexity by narrowing context.
+* Embeds premise selection and tactic generation in a neural pipeline.
+
+---
+
+## ⚖️ Tackling Vast Action Spaces: LIPS
+
+**LIPS** = *LLM-based Inequality Prover with Symbolic reasoning*
+
+* A hybrid system that handles **Olympiad-level inequality proofs**.
+* Combines:
+
+  * **Symbolic engines** for scaling tactics (e.g., Cauchy-Schwarz)
+  * **LLMs** for rewriting and ranking plausible proof states
+* Outperforms IMO gold medalists and discovers new, human-inaccessible strategies.
+
+---
+
+## 🔄 Autoformalization: From Informal to Formal Math
+
+### Tasks:
+
+1. **Theorem Translation**: Informal → Formal statement
+2. **Proof Translation**: Informal + formal theorem → Formal proof
+
+### Major Challenges:
+
+* **Evaluation Difficulties**: No automatic equivalence checker for formalized outputs.
+* **Reasoning Gaps**: Informal math relies on assumptions, skipped steps, and diagrams.
+
+---
+
+## 🧭 Euclidean Geometry as a Case Study
+
+### Why Geometry?
+
+* Relies heavily on **diagrammatic reasoning** and implicit logic.
+* Informal proofs are rich in **unstated assumptions**.
+
+### Contributions:
+
+* **LeanEuclid**: First faithful formalization of Euclid’s *Elements* and UniGeo dataset.
+* **System E**:
+
+  * Models **diagrammatic rules**.
+  * Uses **SMT solvers** to bridge visual-logical gaps in proofs.
+
+---
+
+## 📌 Final Takeaways
+
+### Core Ideas:
+
+* Math and code are **perfect testbeds** for reasoning due to their evaluability.
+* **LLMs are great at answers, not yet at rigorous reasoning.**
+* Formal systems like **Lean are essential** for reliable mathematical AI.
+* **Hybrid models (symbolic + neural)** show promise in narrow domains (e.g., LIPS).
+* **Autoformalization** is a promising but nascent field, limited by evaluation and generalizability.
+
+### Grand Challenge:
+
+> **Can we generalize autoformalization across all domains of mathematics?**
+> This remains an open frontier in AI research.
+
+---
+
+### Ref:
+
+- https://llmagents-learning.org/slides/mathverification.pdf
+- https://www.youtube.com/live/cLhWEyMQ4mQ
+
+
+</details>
+
+## Lecture 10: Bridging Informal and Formal Mathematical Reasoning
+
+<details>
+
+**Author**: Sean Welleck
+**Institution**: Carnegie Mellon University
+**Date**: April 14, 2025
+**Source**: *L10\_Bridging\_Informal\_and\_Formal\_Mathematical\_Reasoning.pdf*
+
+---
+
+## 📌 Executive Summary
+
+This presentation explores how Artificial Intelligence (AI)—specifically Large Language Models (LLMs)—is being used to bridge the *informal-formal gap* in mathematics. While informal mathematics is flexible and intuitive but unstructured, formal mathematics offers rigorous, checkable proof systems like Lean. The talk identifies three primary strategies to unify these domains:
+
+1. **Training models to generate informal "thoughts"** that guide formal reasoning (Lean-STaR).
+2. **Developing hybrid informal-formal provers** (Draft-Sketch-Prove, LeanHammer).
+3. **Supporting research-level formalization projects** through contextual tools (MiniCTX).
+
+These tools and methods show promising advances in both accuracy and usability, helping bring AI closer to assisting human mathematicians in authentic research workflows.
+
+---
+
+## 🔍 Key Themes and Ideas
+
+### 🧠 AI in Expert Domains
+
+* AI agents are increasingly used in **finance, medicine, and mathematics**.
+* In math, AI can:
+
+  * Engage in **open-ended dialogue**
+  * Generate **counterexamples**
+  * Assist in **writing formal proofs**
+
+---
+
+## ✍️ Informal vs. Formal Mathematics
+
+| Aspect          | Informal Mathematics                     | Formal Mathematics                          |
+| --------------- | ---------------------------------------- | ------------------------------------------- |
+| Format          | Natural language, images, intuition      | Code-like proofs (e.g. Lean, Coq, Isabelle) |
+| Characteristics | Flexible, expressive, but hard to verify | Rigid, verifiable, “math as source code”    |
+| Tooling         | Language models (e.g., GPT-4)            | Proof assistants and theorem provers        |
+| Challenge       | Difficult to check                       | Difficult to write                          |
+
+Visual examples on pages 4–6 show how both types are expressed and used in practice.
+
+---
+
+## 📈 The Rise of Formal Methods
+
+* **Lean Mathlib**: 1M+ lines of code, 300+ contributors
+* **Terence Tao’s formalization project** (Oct 2023) serves as a case study
+* Benefits of formal math:
+
+  * **Collaboration** through modular problem solving
+  * **Trustworthy output** via automatic verification
+  * **Instant feedback** and **guaranteed correctness**
+
+---
+
+## 🤝 Why Formal Math Matters for AI
+
+* Prevents incorrect code or math generation
+* Offers verifiable reasoning benchmarks
+* Serves as a **feedback mechanism for model training**
+* Supports reasoning tasks from "1 + 1 = 2" to "Fermat’s Last Theorem"
+
+---
+
+## 🔧 Bridging the Informal–Formal Gap
+
+### 1. **Informal Thoughts – Lean-STaR**
+
+* **Goal**: Train LLMs to “think” before applying formal tactics.
+* **Method**: Uses reinforcement learning to generate intermediate thoughts.
+* **Impact**: Boosts performance on **miniF2F** benchmark tasks.
+* **Result**: Inspired adoption in systems like DeepSeek Prover and OpenAI’s o1 model.
+
+📌 *Key Insight*: More expressive thoughts lead to better proof search (page 46).
+
+---
+
+### 2. **Informal Provers – Draft-Sketch-Prove & LeanHammer**
+
+#### 🔹 Draft-Sketch-Prove (DSP)
+
+* **Workflow**:
+
+  1. Draft an informal proof (LLM or human).
+  2. Convert it into a formal sketch.
+  3. Use a **low-level prover** (Sledgehammer) to fill in gaps.
+* **Analogy**: Like a mathematician writing an outline, then formalizing it with rigorous steps.
+
+#### 🔹 LeanHammer
+
+* Builds a “hammer” for **Lean**, integrating:
+
+  * Neural **premise selection**
+  * **Tree search** (Aesop)
+  * Automated Theorem Provers (ATP)
+* **Premise selection** is framed as a **retrieval task** using transformer models.
+* **Command**: Users can simply type `hammer` to fill proof steps.
+
+📊 *Proof rate improves dramatically* with LeanHammer vs. no retriever (page 89).
+
+---
+
+### 3. **Research-Level Mathematics – MiniCTX**
+
+* **Problem**: Benchmarks like IMO are too “clean.”
+* **Solution**: MiniCTX evaluates on real Lean repositories:
+
+  * Projects: **PFR**, **PrimeNumberTheorem**, etc.
+  * Context-aware: evaluates both **in-file** and **cross-file** dependencies.
+* **Methods Compared**:
+
+  * “State-tactic tuning” vs. “File tuning”
+  * File tuning consistently outperforms in real-world settings.
+
+📎 Tool integration: **LLMLean** combines MiniCTX-trained models with Lean IDEs for real-time suggestions.
+
+🛠 Open-Source:
+
+* [GitHub: LLMLean](https://github.com/cmu-l3/llmlean)
+* [Data/models: Hugging Face](https://huggingface.co/l3lab)
+
+---
+
+## 📌 Noteworthy Quotes
+
+> **“Code compiles ≡ correct proof”**
+> **“Can we train a model to ‘think’ before each step of formal reasoning?”**
+> **“Draft an informal proof, translate it into a formal sketch, then use a low-level prover to fill in the gaps.”**
+> **“Premise selection” is the key challenge for hammers.**
+> **“Test models on real Lean projects” – MiniCTX**
+
+---
+
+## 🧠 Key Takeaways
+
+* **AI can now meaningfully assist in mathematics**, moving beyond rote computation to logical reasoning.
+* **Lean-STaR** demonstrates the value of training LLMs to generate intermediate “thoughts.”
+* **Draft-Sketch-Prove and LeanHammer** provide practical mechanisms to automate theorem proving.
+* **MiniCTX** benchmarks the ability of AI to handle real-world formalization scenarios.
+* The field is moving toward **AI-supported collaborative formalization**, not just educational use cases.
+
+---
+
+### Ref:
+
+ - https://llmagents-learning.org/slides/welleck2025_berkeley_bridging.pdf
+ - https://www.youtube.com/live/Gy5Nm17l9oo
+
+</details>
+
+## Lecture 11: Abstraction and Discovery with Large Language Model Agents
+
+<details>
+
+**Title**: *Abstraction and Discovery with Large Language Model Agents*
+**Author**: Swarat Chaudhuri (University of Texas at Austin)
+**Context**: Exploring how LLM agents accelerate mathematical and scientific discovery via abstraction, reasoning, and concept learning.
+
+---
+
+## 🎯 Core Theme: Leveraging LLM Agents for Enhanced Discovery
+
+LLM agents are presented as **powerful tools for automated discovery**, enabled by four key capabilities:
+
+1. **Systematic exploration** of hypotheses, conjectures, and proofs
+2. **Use of prior knowledge** to guide search
+3. **Learning from experience** to improve search strategies
+4. **Discovery of abstract tools and concepts** that boost both search and learning efficiency
+
+> 📌 *"This talk: LLM agents with all four capabilities."* – Page 4
+
+---
+
+## 🧮 Section I: Mathematical Discovery with LLMs
+
+### 🧠 Key Problems in the Neural-Only Approach
+
+* **Data Scarcity**: Difficult to obtain structured reasoning traces beyond high-school level problems
+* **Lack of Verifiability**: Natural-language reasoning is hard to validate in domains like formal verification
+
+> *“Natural-language reasoning is hard to verify. In applications like system verification, edge cases are especially critical.”* – Page 8
+
+---
+
+### 🧩 Formal Reasoning Pipeline
+
+A better alternative involves using **formal representations** and **proof assistants**:
+
+#### ✅ Example Tools:
+
+* **Neural Autoformalizer**: Converts informal math problems into formal statements
+* **Neural Prover**: Suggests tactics using the context of formal math libraries (e.g., Lean)
+* **Formal Proof Assistant**: Validates the generated proofs
+
+🖼️ *Illustrated on Page 9–12 with a Lean proof of: “if a number is even, its square is even”*
+
+---
+
+### 🔁 Reinforcement Learning & Copra
+
+#### 🔸 **AlphaProof** (DeepMind)
+
+* Combines formalization + reinforcement learning to learn from **both successful and failed** proofs
+* Uses test-time RL on problem variants
+
+#### 🔸 **Copra**: In-Context Learning Agent for Theorem Proving
+
+* Integrates formal proof reasoning with LLMs via:
+
+  * Prompt synthesis
+  * Tactic parsing
+  * Execution in proof environments
+  * Augmentation via lemma databases
+* **Outperforms GPT-4** on theorem correctness (Page 18–19)
+
+> 📊 *"Copra (+ Retrieval + Informal)" achieves \~30.74% on miniF2F test vs. \~6% from GPT-3.5 Few-Shot* – Page 19
+
+---
+
+### 🧠 Hierarchical Problem Solving
+
+A unique pipeline integrates **natural-language and formal reasoning** by:
+
+1. Asking an LLM for an informal outline
+2. Splitting it into formal subgoals
+3. Letting Copra solve each sequentially
+
+🧪 **Example**: IMO 1959 Problem on irreducibility of a fraction – Pages 21–24
+
+---
+
+### 🧾 Application: **Compiler Verification**
+
+A real-world example where:
+
+* A source/target language is formally defined
+* A compiler is implemented as a translator
+* The LLM initially **fails to prove correctness**, but:
+
+  * Invents an auxiliary lemma
+  * Automatically proves both the lemma and the final theorem
+
+🛠️ *Detailed walkthrough on Pages 26–39*
+
+---
+
+## 🔬 Section II: Scientific Discovery
+
+### 🔁 Scientific Process
+
+Follows classical lifecycle:
+**Problem → Hypothesis → Data → Analysis → Interpretation**
+
+🛰️ **Example**: Heliocentric model, Tycho Brahe’s Mars observations, Kepler's Law → Newton's Law
+🖼️ Visuals of this process on Pages 47–50
+
+---
+
+### 📈 Symbolic Regression
+
+#### ✅ PySR:
+
+* Uses evolutionary algorithms to discover symbolic equations from data
+
+#### 🚀 LaSR (Symbolic Regression + LLMs):
+
+A new system combining symbolic search with LLM-guided evolution
+
+#### LaSR Innovations:
+
+* **Concept Library**: Abstractions like “Power Law Trend”, “Exponential Growth”
+* **LLM Guidance**:
+
+  * Crossover / Mutation / Initialization
+  * Concept abstraction & evolution
+* **Joint Concept & Program Learning**:
+
+  * Evolving equations *and* abstract mathematical ideas simultaneously
+    🖼️ Visual “islands” of search space: Pages 55, 69–72
+
+> *"Concept guidance accelerates discovery."* – Page 73
+> *"Smaller models synthesize simpler equations!"* – Pages 75–76 (Coulomb’s Law example)
+
+---
+
+## 📉 Finding LLM Scaling Laws with LaSR
+
+### 🔍 Standard Approach (e.g., Hoffman et al.):
+
+* Postulate scaling law
+* Measure model loss vs. training hyperparameters
+* Fit best function
+
+### 🔬 LaSR Approach:
+
+* Uses symbolic regression to fit *simpler, more generalizable scaling laws*
+* Applied to BIG-Bench (204 tasks, 55 LLMs)
+* Captures trends like:
+
+  * *“More shots hurt low-capability models but help high-capability ones.”* – Page 80
+
+---
+
+## 👁️ Visual Discovery with LLMs & VLMs
+
+### 🔎 Zero-Shot Transfer
+
+* Uses **visual concept descriptors** like “white head”, “stacked containers” for identification (e.g., eagle, container ship)
+  🖼️ Pages 83–85
+
+### 🔁 Concept Evolution
+
+* VLMs compute similarity scores between visual features and concept descriptors
+* Refinement through **contrastive learning + evolutionary feedback**
+  🖼️ *Beignet vs. Donut misclassification improved via concept refinement* – Page 87–88
+
+---
+
+## 🧠 Summary: The Power of LLM Agents
+
+* **Mathematical Discovery**:
+
+  * LLMs + proof assistants → non-trivial formal theorem solving
+  * Hierarchical + lemma-driven proof construction
+
+* **Scientific Discovery**:
+
+  * Symbolic regression, concept abstraction, and neural evolution
+  * Enhanced interpretability and accelerated knowledge generation
+
+* **Visual Reasoning**:
+
+  * Vision-language critics enable self-evolving visual concept libraries
+
+---
+
+## 🚧 Open Challenges & Future Directions
+
+| Area              | Challenge                                   | Strategy                                         |
+| ----------------- | ------------------------------------------- | ------------------------------------------------ |
+| **Data**          | Lack of high-quality proof traces           | Synthetic data, crowdsourcing, multilingual data |
+| **Formalization** | Converting informal → formal logic          | Process-driven autoformalization (Lu et al.)     |
+| **Exploration**   | Open-ended conjecturing                     | Self-play between conjecturer & prover           |
+| **Verification**  | Validating hypotheses & concepts            | More rigorous semantics & testing loops          |
+| **Scalability**   | Expanding input space and design complexity | Hierarchical, modular agent designs              |
+
+---
+
+## Ref:
+
+ - https://llmagents-learning.org/slides/swarat.pdf
+ - https://www.youtube.com/live/IHc0TEMrEdY
+
+</details> 
+
+## Lecture 12: Towards building safe and secure agentic AI
+
+<details>
+
+**Authors**: Dawn Song, Xinyun Chen, Kaiyu Yang
+**Institution**: UC Berkeley
+**Source**: *L12\_Towards\_Building\_Safe\_And\_Secure\_Agentic\_AI.pdf*
+**Date**: December 2024 (based on context)
+
+---
+
+## 🧭 Executive Summary
+
+This document addresses the **urgent need to secure agentic AI systems**—complex systems powered by large language models (LLMs) capable of autonomous action, reasoning, and interaction. As these systems become more powerful and prevalent in 2025, so do the associated risks. The report provides a framework for understanding and defending against misuse, malfunction, and adversarial attacks across the agentic AI lifecycle.
+
+---
+
+## 🚀 1. The Rise of Agentic AI & Emerging Risks
+
+> **“2025 is the year of Agents”** — Agents are transforming AI from passive tools into active systems that can act in the world.
+
+### Key Risks:
+
+* **Misuse/Malicious Use**: Scams, misinformation, cyber offense, child abuse material, weaponization (e.g., bioweapons).
+* **Malfunction**: Systemic biases, inappropriate deployment, and unintended consequences.
+* **Systemic Risks**: Privacy violations, copyright infringement, labor market disruption, and systemic failure.
+
+### Attack Context:
+
+> “History has shown attacker always follows footsteps of new technology.”
+
+As AI agents gain real-world control, attacker incentives grow. Thus, **security must be an integral part of system design from the start**.
+
+---
+
+## 🧱 2. Distinguishing Safety vs. Security
+
+| **AI Safety**                           | **AI Security**                                |
+| --------------------------------------- | ---------------------------------------------- |
+| Prevents harm caused *by* the AI system | Protects the AI system *from* malicious actors |
+
+The document emphasizes the need for **safety mechanisms to be secure themselves**—e.g., **alignment techniques must withstand adversarial prompt manipulation**.
+
+---
+
+## 🧠 3. Understanding Agentic Systems & Their Vulnerabilities
+
+### Agentic Hybrid Systems:
+
+These are **compound architectures** integrating:
+
+* LLMs
+* Symbolic and neural components
+* Memory, retrieval, tools, code execution
+* Real-world actions and feedback loops
+
+### CIA Goals Extended:
+
+| Traditional Goal | Agentic Extension                         |
+| ---------------- | ----------------------------------------- |
+| Confidentiality  | Model inputs, prompts, memory, outputs    |
+| Integrity        | Model behavior, poisoned data, tool use   |
+| Availability     | DoS on agents, long-term task reliability |
+
+### Failure Points:
+
+At each stage—user input, system processing, model execution, external world interaction—**LLM output can be hijacked** for:
+
+* **SQL injection**
+* **Remote Code Execution (RCE)**
+* **System misuse**
+
+---
+
+## 🧨 4. Attack Vectors in Agentic AI
+
+### Attack Chain Roles of LLM Output:
+
+1. **As UI output** → Info leakage
+2. **As computation parameter** → Error propagation
+3. **As conditional logic** → Control flow hijacking
+4. **As API argument** → Injection attacks (SQL, SSRF)
+5. **As executable code** → Arbitrary execution
+
+### Attack Types:
+
+* **Prompt Injection** (Direct/Indirect)
+* **System Prompt Leakage** (e.g., Bing Chat)
+* **Backdoors** (e.g., via RAG – *AgentPoison*)
+* **Code Injection** (via tools like `llama_index`, `SuperAGI`)
+
+> *Model Security Levels*:
+> From **L0 (perfect and secure)** to **L4 (malicious by design)**.
+
+---
+
+## 🧪 5. Evaluation & Risk Assessment
+
+### 🔍 Evaluation Frameworks:
+
+| Tool              | Focus                                                  |
+| ----------------- | ------------------------------------------------------ |
+| **DecodingTrust** | LLM trustworthiness (performance, robustness, privacy) |
+| **MMDT**          | Safety of Multimodal Foundation Models                 |
+| **RedCode**       | Code agent risk (generation + execution)               |
+| **AgentXploit**   | Fuzzing-based red-teaming of black-box agents          |
+
+> **AgentXploit** uses fuzzed seed mutations, MCTS-based scoring, and was shown to double attack success rates vs. hand-crafted attacks.
+
+---
+
+## 🛡️ 6. Defense Principles
+
+1. **Defense-in-Depth**
+2. **Least Privilege & Separation**
+3. **Safe-by-Design / Secure-by-Design**
+4. **Formal Verification**
+
+---
+
+## 🧰 7. Defense Mechanisms (8-Part Framework)
+
+| # | Mechanism                           | Description                                                |
+| - | ----------------------------------- | ---------------------------------------------------------- |
+| 1 | **Harden Models**                   | Robust training, alignment, data cleaning, unlearning      |
+| 2 | **Input Guardrails**                | Validate, sanitize, normalize all prompts                  |
+| 3 | **Policy Enforcement**              | Enforce least privilege on tool/API calls                  |
+| 4 | **Privilege Management**            | Identity-based access control for users/agents             |
+| 5 | **Privilege Separation**            | Modularize agents into sandboxes (e.g., via **Privtrans**) |
+| 6 | **Monitoring & Detection**          | Logging, real-time anomaly detection                       |
+| 7 | **Information Flow Tracking**       | Prevent unauthorized data propagation                      |
+| 8 | **Secure-by-Design + Verification** | Prove system correctness under all input types             |
+
+> **Progent**: A key tool enabling **programmable privilege control** for LLM agents, combining static (human) and dynamic (LLM-generated) security policies using a DSL.
+
+---
+
+## 🧩 Open Challenges Identified
+
+* How to define **formal specifications** for LLMs?
+* How to conduct **real-time monitoring** without prohibitive storage costs?
+* How to **secure tool boundaries** during agent execution?
+* How to manage **privileges and identities** in **multi-agent ecosystems**?
+
+---
+
+## 📌 Conclusion
+
+Agentic AI systems are powerful yet vulnerable. The document calls for:
+
+* **Stronger security architecture**
+* **New red-teaming techniques**
+* **Formal, provable guarantees**
+* **Cross-disciplinary effort** bridging AI, security, and systems design
+
+> The message is clear: to realize the promise of agentic AI, we must **design for safety in adversarial settings from day one**.
+
+
+## Ref:
+
+- https://llmagents-learning.org/slides/dawn-agentic-ai.pdf
+- https://www.youtube.com/live/ti6yPE2VPZc
+
+</details>
+
 
